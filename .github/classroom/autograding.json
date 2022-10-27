@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "coverage exp_eval",
+      "setup": "sudo -H pip3 install coverage >/dev/null",
+      "run": "python3 -m coverage run -p exp_eval_tests.py 2>/dev/null; python3 -m coverage run -p stack_array_tests.py 2>/dev/null; python3 -m coverage combine; python3 -m coverage report -m --fail-under=100",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "type check exp_eval",
+      "setup": "sudo -H python3 -m pip install mypy >/dev/null",
+      "run": "echo \"mypy type check\"; mypy --disallow-untyped-defs exp_eval.py exp_eval_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "tests stack_array",
+      "setup": "",
+      "run": "python3 stack_array_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "tests exp_eval",
+      "setup": "",
+      "run": "python3 exp_eval_tests.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
